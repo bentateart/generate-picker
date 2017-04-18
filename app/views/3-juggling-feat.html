@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Question page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="2-juggling-ability">Back</a>
+
+      <h1 class="heading-large">Describe your most impressive juggling feat
+      </h1>
+
+      <form class="form" action="3a-juggling-things" method="post">
+
+        <div class="form-group">
+
+          <label class="form-label visually-hidden" for="juggling-feat">Describe your most impressive juggling feat</label>
+          <input class="form-control" type="text" id="juggling-feat" name="juggling-feat" value="{{ data['juggling-feat'] }}"> 
+
+        </div>
+        <!-- /form-group -->
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        <div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

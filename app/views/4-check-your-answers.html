@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="heading-large">
+    Check your answers before sending your application
+  </h1>
+
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            Application details
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          The most number of balls you can juggle
+        </td>
+        <td>
+          {{ data['juggling-ability'] }}
+        </td>
+        <td class="change-answer">
+          <a href="2-juggling-ability">
+            Change <span class="visua llyhidden">the most number of balls you can juggle</span>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Your most impressive juggling feat
+        </td>
+        <td>
+          {{ data['juggling-feat'] }}
+        </td>
+        <td class="change-answer">
+          <a href="3-juggling-feat">
+            Change <span class="visuallyhidden">your most impressive juggling feat</span>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          {% if data['juggle-things'].length == 1 %}
+            You can only juggle
+          {% else %}
+            You can juggle these things
+          {% endif %}
+        </td>
+        <td>
+          {% for object in data['juggle-things'] %}
+            <li>{{ object }}</li>
+          {% else %}
+            You can't juggle anything
+          {% endfor %}
+        </td>
+        <td class="change-answer">
+          <a href="3a-juggling-things">
+            Change <span class="visuallyhidden">the things you can juggle</span>
+          </a>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <h2 class="heading-medium">Now send your application</h2>
+
+  <p class="text">
+    By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
+  </p>
+
+  <div class="form-group">
+    <a href="5-confirmation" class="button">Accept and send application</a>
+  </div>
+
+</main>
+
+{% endblock %}
