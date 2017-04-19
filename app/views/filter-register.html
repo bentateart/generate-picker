@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Question page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="choose-register">Back</a>
+
+      <h1 class="heading-large">Which countries does your dataset need?
+      </h1>
+
+      <form class="form" action="preview" method="post">
+
+        <div class="form-group">
+
+             <legend class="visually-hidden">Which countries does your dataset need?</legend>
+
+             <div class="multiple-choice">
+               <input id="filter-register-1" name="filter-register" type="checkbox" value="Present countries" checked 
+               {{ checked ('filter-register',"Present countries") }} >
+               <label for="filter-register-1">Present countries</label>
+             </div>
+
+             <div class="multiple-choice">
+               <input id="filter-register-2" name="filter-register" type="checkbox" value="Past countries"
+               {{ checked ('filter-register',"Past countries") }} >
+               <label for="filter-register-2">Past countries</label>
+             </div>
+
+             <div class="multiple-choice">
+               <input id="filter-register-3" name="filter-register" type="checkbox" value="Territories"
+               {{ checked ('filter-register',"Territories") }} >
+               <label for="filter-register-3">Territories</label>
+             </div>
+             
+             <div class="multiple-choice">
+               <input id="filter-register-4" name="filter-register" type="checkbox" value="Synonyms of countries" disabled="" 
+               {{ checked ('filter-register',"Synonyms of countries") }} >
+               <label for="filter-register-4">Synonyms of countries</label>
+             </div>
+
+        </div>
+        <!-- /form-group -->
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Preview your dataset">
+        <div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

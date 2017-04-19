@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Question page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="preview">Back</a>
+
+      <h1 class="heading-large">Download the code</h1>
+
+      <form class="form" action="confirmation" method="post">
+
+        <div class="form-group">
+
+          <fieldset>
+
+            <legend class="visually-hidden">Download the code</legend>
+
+            <!-- Download UI here, not sure what this looks like yet -->
+
+          </fieldset>
+
+        </div>
+        <!-- /form-group -->
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

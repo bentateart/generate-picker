@@ -7,30 +7,17 @@ router.get('/', function (req, res) {
 })
 
 // add your routes here
+router.post('/filter-register', function (req, res) {
 
-var express = require('express')
+	var register = req.session.data['register']
 
-var router = express.Router()
-
-// Route index page
-router.get('/', function (req, res) {
-	res.render('index')
-})
-
-// add your routes here
-
-router.post('/3-juggling-feat', function (req, res) {
-
-	var jugglingAbility = req.session.data['juggling-ability']
-
-	if (jugglingAbility == "Three or more balls") {
-		res.redirect('/3-juggling-feat')
+	if (register == "Countries") {
+		res.redirect('/filter-register')
 	}
 
 	else {
-		res.redirect('/2a-ineligible')
+		res.redirect('/not-available')
 	}
-
 })
 
 module.exports = router

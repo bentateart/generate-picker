@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Question page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="start-page">Back</a>
+
+      <h1 class="heading-large">Which dataset do you need to run your service?</h1>
+
+      <form class="form" action="filter-register" method="post">
+
+        <div class="form-group">
+
+          <fieldset>
+
+            <legend class="visually-hidden">Which dataset do you need to run your service?</legend>
+
+            <div class="multiple-choice">
+              <input id="radio-1" type="radio" name="register" value="Addresses" 
+                {{ checked ('register',"Addresses") }} >
+              <label for="radio-1">Addresses</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="radio-2" type="radio" name="register" value="Countries" 
+                {{ checked ('register',"Countries") }} >
+              <label for="radio-2">Countries</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="radio-3" type="radio" name="register" value="Local authorities"
+                {{ checked ('register',"Local authorities") }} >
+              <label for="radio-3">Local authorities</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="radio-4" type="radio" name="register" value="Prisons"
+                {{ checked ('register',"Prisons") }} >
+              <label for="radio-4">Prisons</label>
+            </div>
+
+          </fieldset>
+
+        </div>
+        <!-- /form-group -->
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
